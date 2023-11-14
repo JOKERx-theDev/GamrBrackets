@@ -1,0 +1,1151 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    caret-color: transparent;
+    background: hsl(248, 62%, 5%);
+    overflow: hidden;
+}
+.gamrBody{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: start;
+}
+.gamrBody> div{
+    min-width: 20%;
+}
+/*ADD FONT EXTERNALLY*/
+@font-face {
+    font-family: myFontMedium;
+    src: url(/Satoshi_Complete/Fonts/OTF/Satoshi-Medium.otf);
+}
+@font-face {
+    font-family: myFontBold;
+    src: url(/Satoshi_Complete/Fonts/OTF/Satoshi-Bold.otf);
+}
+@font-face {
+    font-family: myFontRegular;
+    src: url(/Satoshi_Complete/Fonts/OTF/Satoshi-Regular.otf);
+}
+/*LOGO*/
+.logobar{
+    border: 1px solid #272456;
+    border-left: none;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+    border-right: none;
+}
+.logo{
+    width: 63px;
+    height: 18px;
+    object-fit: contain;
+}
+.logo img{
+    width: 100%;
+    height: 100%;
+}
+/*SIDE BAR*/
+.side-bar{
+    height: 100vh;
+    width: 20%;
+    background: #05041B;
+    border-right: 1px solid #272456;
+}
+.sideBar-nav-menu ul,.side-bar-settings ul,.side-bar-sign-out ul{
+    margin: 0;
+    padding: 0;
+    padding-left: 10%;
+    padding-top: 15px;
+}
+.sideBar-nav-menu ul{
+    margin: 0;
+    padding: 0;
+    padding-left: 10%;
+    padding-top: 15px;
+    border-bottom: 1px solid #272456;
+    padding-bottom: 20px;
+}
+.side-bar-settings ul{
+    padding-bottom: 60px;
+}
+.sideBar-nav-menu ul li,.side-bar-settings ul li,.side-bar-sign-out ul li{
+    list-style: none;
+}
+.sideBar-nav-menu ul li a,.side-bar-settings ul li a,.side-bar-sign-out ul li a{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+    gap: 25px;
+    height: 40px;
+    color: #AAAAE2;
+}
+.sideBar-nav-menu ul li a :hover,.side-bar-settings ul li a :hover,.side-bar-sign-out ul li a :hover{
+    color: #fff;
+}
+.sideBar-nav-menu ul li a p,.side-bar-settings ul li a p,.side-bar-sign-out ul li a p{
+    margin: 0;
+    padding: 0;
+    font-family: myFontMedium;
+    font-size: 14px;
+    color: #AAAAE2;
+}
+.sideBar-nav-menu ul li a span,.side-bar-settings ul li a span,.side-bar-sign-out ul li a span{
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+.sideBar-nav-menu ul li a span img,.side-bar-settings ul li a span img,.side-bar-sign-out ul li a span img{
+    width: 100%;
+    height: 100%;
+}
+/*MAIN NAVIGAION MENU*/
+.gamrMainNavMenu ul ,.gamrMainNavList,.mainNavUserDetailsImg,.notification,.mainNavUserDetails{
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+.gamrMainNavMenu{
+    overflow: hidden;
+    width: 168vh;
+    background-color: #05041B;
+    border-bottom: 1px solid #272456;
+}
+.gamrMainNavMenu ul{
+    height: 50.5px;
+    width: 90%;
+    justify-content: space-between;
+    padding-left: 5%;
+}
+.gamrMainNavList{
+    gap: 50px;
+}
+.title{
+    font-family: myFontBold;
+    font-size: 13px;
+}
+.SignInAs{
+    font-family: myFontRegular;
+    font-size: 11px;
+}
+.signInAsUsername{
+    color: #585490;
+}
+.username{
+    color: #A9A7CE;
+}
+.title,.SignInAs{
+    color: #fff;
+}
+.notification{
+    position: relative;
+    height: 30px;
+    width: fit-content;
+    cursor: pointer;
+    font-family: myFontRegular;
+}
+.notifcationImg{
+    width: 17px;
+    height: 17px;
+    object-fit: cover;
+}
+.notifcationImg img{
+    width: 100%;
+    height: 100%;
+}
+.notificationAlert{
+    position: absolute;
+    height: 13px;
+    width: 13px;
+    background: #DA164E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 8px;
+    color: #fff;
+    top: 0%;
+    left: 50%;
+}
+.mainNavUserDetails{
+    gap: 5px;
+    cursor: pointer;
+}
+.mainNavUserDetailsImg{
+    height: 30px;
+    width: 30px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: #272456;
+    justify-content: center;
+}
+.mainNavUserDetailsImg img{
+    width: 50%;
+    height: 50%;
+}
+.mainNavUserDetailsArrow i{
+    font-size: 12px;
+    color: #A7A5CA;
+    transition: .5s;
+}
+.mainNavUserDetailsactive .mainNavUserDetailsArrow i{
+    transform: rotate(90deg);
+    transition: .5s;
+}
+.profileDetails{
+    position: absolute;
+    top: -100%;
+    left: 75%;
+    display: flex;
+    width: 300px;
+    align-items: center;
+    justify-content: space-around;
+    background: #100E30;
+    height: 60px;
+    border-radius: 10px;
+    transition: .5s;
+    z-index: -1;
+}
+.mainNavUserDetailsactive .profileDetails{
+    top: 10%;
+    transition: .5s;
+}
+.profileDetailsName p,.profileDetailsRank p{
+    margin: 0;
+}
+.profileDetailsImg{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    object-fit: contain;
+    justify-content: center;
+    align-items: center;
+    background: #272456;
+    border-radius: 50%;
+}
+.profileDetailsImg img{
+    width: 50%;
+    height: 50%;
+}
+.profileDetailsUserName{
+    font-family: myFontBold;
+    font-size: 13px;
+    color: #D8D8FF;
+    padding-top: 3px;
+}
+.profileDetailsTeamName{
+    font-family: myFontRegular;
+    font-size: 12px;
+    color: #56568A;
+}
+.leaderboad{
+    font-family: myFontRegular;
+    font-size: 13px;
+    color: #56568A;
+}
+.rating{
+    font-family: myFontRegular;
+    font-size: 12px;
+    color: #FFCB13;
+    padding-top: 3px;
+}
+/*GAMR HERO*/
+.gamrHero{
+    width: 100%;
+    padding: 5%;
+    padding-top: 1%;
+    padding-bottom: 0%;
+    z-index: -3;
+}
+.tournamentSliderHeader p{
+    font-family: myFontMedium;
+    margin: 0;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 14px;
+}
+/*SLIDER IMAGE*/
+.slider{
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    font-family: myFontMedium;
+}
+.sliderImages{
+    width: 280px;
+    height: 170px;
+    object-fit: cover;
+}
+.sliderImages img{
+    width: 100%;
+    height: 100%;
+}
+.sliderText p{
+    margin: 0;
+}
+.sliderText{
+    position: absolute;
+    top: 0%;
+    width: 93.6%;
+    height: 100%;
+    z-index: 7;
+    padding-left: 7%;
+    background-image: linear-gradient(to bottom, #19214b1a, #0B0A3C);
+    border-radius: 10px;
+}
+.sliderTextStatus{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 34%;
+}
+.sliderTextStatusText{
+    font-size: 12px;
+    color: #1CFAC4;
+}
+.sliderTextStatusCircle{
+    height: 8px;
+    width: 8px;
+    background: #1CFAC4;
+    border-radius: 50%;
+}
+.sliderTextTitle{
+    font-size: 15px;
+    color: #fff;
+    padding-top: 5px;
+}
+.sliderTextDetails{
+    display: flex;
+    align-items: center;
+    color: #D8D8FF;
+    gap: 3px;
+    margin-top: 3px;
+}
+.sliderTextDetails p{
+    font-size: 11px;
+    color: #D8D8FF;
+}
+.sliderContainer{
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+.swiper-wrapper{
+    padding-bottom: 3%;
+}
+.swiper-pagination{
+    margin-left: -10% ;
+}
+.swiper-pagination-bullet{
+    background-color: #45448F !important;
+    height: 7.5px !important;
+    width: 7.5px !important;
+}
+.swiper-pagination-bullet-active{
+    background-color: #514ED8 !important;
+}
+/*CREATE TOURNAMENT*/
+.createTournament{
+    width: 90%;
+    height: 100vh;
+    background: #070523;
+    border-radius: 10px;
+}
+.createTournamentNav{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2%;
+    font-family: myFontRegular;
+}
+.createTournamentNav p{
+    margin: 0;
+    padding: 0;
+    color: #6F6BA3;
+    font-size: 14px;
+    font-family: myFontBold;
+}
+.createTournamentNav button{
+    width: 100px;
+    height: 33px;
+    background: #FF3B30;
+    border: 1px solid #FF3B30;
+    outline: #FF3B30;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.createTournamentTitle{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: myFontBold;
+    gap: 30px;
+    padding-top: 2%;
+    border-bottom: 1.3px solid #2C2866;
+    padding-bottom: 10px;
+}
+.createTournamentTitleName{
+    width: 180px;
+}
+.createTournamentTitleImg{
+    width: 70px;
+}
+.createTournamentTitleImg,.createTournamentTitleCreate,.createTournamentTitleName,.createTournamentTitlePrice,.createTournamentTitleMode,.createTournamentTitleStatus,.createTournamentTitleAction{
+    color: #fff;
+    font-size: 12px;
+}
+/*TOURNAMENT LIST*/
+.listOfCreatedTournament{
+    width: 90%;
+    margin: 0 auto;
+}
+.listOfCreatedTournamentDetail{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: myFontRegular;
+    gap: 10px;
+    border-bottom: 1.3px solid #2C2866;
+    padding-bottom: 10px;
+    padding-top: 1%;
+}
+.listOfCreatedTournamentDetailImg{
+    width: 70px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.listOfCreatedTournamentDetailImg img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.listOfCreatedTournamentDetail p{
+    margin: 0;
+}
+.listOfCreatedTournamentDetailName{
+    width: 200px;
+}
+.listOfCreatedTournamentDetailDate{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+.listOfCreatedTournamentDetailDate,.listOfCreatedTournamentDetailName,.listOfCreatedTournamentDetailPrice,.listOfCreatedTournamentDetailMode{
+    color: #fff;
+    font-size: 12px;
+}
+.listOfCreatedTournamentDetailAction{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.listOfCreatedTournamentDetailAction i{
+    color: #534F87;
+    font-size: 15px;
+    cursor: pointer;
+}
+.listOfCreatedTournamentDetailStatusBody p{
+    font-size: 10px;
+    color: #fff;
+}
+.listOfCreatedTournamentDetailStatusBody{
+    background: #46AE70;
+    width: 50px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+/*CREATE NEW TOURNAMENT*/
+.createTournamentStepOne{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+    background-color: #070515;
+    padding: 0;
+    padding-left: 5%;
+    margin: 0;
+    display: none;
+}
+.createTournamentStepOneHeader{
+    font-size: 15px;
+    color: #fff;
+    font-family: myFontMedium;
+    margin: 0;
+    margin-top: 15px;
+    letter-spacing: 1.2px;
+}
+.createTournamentStepOneBody{
+    width: 90%;
+    background-color: #070523;
+    height: 70vh;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.createTournamentStepOneBody{
+    display: flex;
+    align-items: first baseline;
+}
+.createTournamentStepOneBodySteps{
+    margin-left: 3%;
+    width: 30%;
+}
+.createTournamentStepOneBodyStepsheader{
+    font-family: myFontRegular;
+}
+.createTournamentStepOneBodyStepsheader p{
+    margin: 0;
+    color: #585490;
+    font-size: 11px;
+}
+.createTournamentStepOneBodyStep{
+    font-family: myFontMedium;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.createTournamentStepOneBodyStepCheckActive{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, #B447EB, #5F35DD);
+}
+.createTournamentStepOneBodyStepCheckActive i{
+    color: #fff;
+    font-size: 7px;
+}
+.createTournamentStepOneBodyStepTextActive{
+    font-size: 12px;
+    color: #fff;
+}
+.createTournamentStepOneBodyStepText{
+    font-size: 12px;
+    color: #D8D8FF;
+}
+.createTournamentStepOneBodyStepCheck{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, #534F87, #25215A);
+}
+.createTournamentStepOneBodyStepCheck i{
+    color: #D8D8FF;
+    font-size: 7px;
+}
+.createTournamentStepTwoBodyStepTextCompleted{
+    font-size: 12px;
+    color: #D8D8FF;
+}
+.createTournamentStepOneBodyStepCheckCompleted{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #2FBA67;
+}
+.createTournamentStepOneBodyStepCheckCompleted i{
+    color: #fff;
+    font-size: 7px;
+}
+.createTournamentStepOneBodyStepsheader{
+    padding-top: 25px;
+}
+.createTournamentStepOneBodyStepsheader,.createTournamentStepOneBodyStep{
+    margin-bottom: 25px;
+}
+/*Create new tournament form*/
+.TournamentDetails{
+    width: 55%;
+}
+.TournamentDetailsHeader p{
+    font-family: myFontMedium;
+    font-size: 13px;
+    color: #D8D8FF;
+}
+.TournamentDetailsSubheader p{
+    font-family: myFontRegular;
+    font-size: 12px;
+    color: #AAAAE2;
+}
+.TournamentDetailsFormInfo label{
+    display: flex;
+    font-family: myFontMedium;
+    font-size: 12px;
+    color: #D8D8FF;
+    gap: 5px;
+}
+.questionmark{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, #8787C2, #454578);
+    font-size: 10px;
+    color: #fff;
+}
+.TournamentDetailsFormInfo input{
+    width: 100%;
+    height: 35px;
+    background: #110D3D;
+    color: #7E77D4;
+    font-family: myFontRegular;
+    border: 1px solid #110D3D;
+    outline: #110D3D;
+    font-size: 12px;
+    padding-left: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+.TournamentDetailsFormInfo input:focus{
+    caret-color: #7E77D4;
+    border: #100E30;
+}
+.TournamentDetailsFormInfo input::placeholder{
+    font-size: 12px;
+    color: #7E77D4;
+    padding-left: 10px;
+    opacity: .7;
+}
+.TournamentDetailsFormImage input{
+    width: 100%;
+    opacity: 0;
+    height: 150px;
+    z-index: 10;
+    position: relative;
+}
+.TournamentDetailsFormImage{
+    width: 101.5%;
+    border: 1.5px dashed #463F9E;
+    height: fit-content;
+    position: relative;
+}
+.TournamentDetailsFormImageDisplay{
+    width: 100%;
+    height: 90px;
+    position: absolute;
+    top: 0;
+    object-fit: cover;
+}
+.TournamentDetailsFormImage label{
+    font-size: 13px;
+    font-family: myFontRegular;
+    color: #7E77D4;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 30;
+}
+.cancelOrContinue{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 101.5%;
+    margin-top: 20px;
+    
+}
+.cancel{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+.cancel p{
+    margin: 0;
+    font-size: 13px;
+    color: #D8D8FF;
+    font-family: myFontMedium;
+}
+.cancelI{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, #534F87, #25215A);
+    cursor: pointer;
+}
+.cancelI i{
+    font-size: 13px;
+    color: #fff;
+}
+.cancelOrContinue button{
+    width: 100px;
+    height: 35px;
+    background: #FF1010;
+    outline: #FF1010;
+    border: 1px solid #FF1010;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.TournamentDetailsFormImageDisplay img{
+    width: 100%;
+    height: 150px;
+    border: hidden;
+    outline: hidden;
+}
+.TournamentDetailsForm{
+    padding-top: 10px;
+}
+.TournamentDetailsFormImage{
+    margin-top: 25px;
+}
+.cancelOrContinue button:disabled{
+    opacity: .5;
+    cursor: no-drop;
+}
+.TournamentDetailsFormInfo input.TournamentDetailsFormInfoActive{
+    border: 1px solid red;
+}
+/*CREATE NEW TOURNAMENT STEP 2*/
+.createTournamentStepTwo{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+    background-color: #070515;
+    padding: 0;
+    padding-left: 5%;
+    margin: 0;
+    display: none;
+}
+.createTournamentStepTwoHeader{
+    font-size: 15px;
+    color: #fff;
+    font-family: myFontMedium;
+    margin: 0;
+    margin-top: 15px;
+    letter-spacing: 1.2px;
+}
+.createTournamentStepTwoBody{
+    width: 90%;
+    background-color: #070523;
+    height: 70vh;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.createTournamentStepTwoBody{
+    display: flex;
+    align-items: first baseline;
+}
+.createTournamentStepTwoBodySteps{
+    margin-left: 3%;
+    width: 30%;
+}
+.createTournamentStepTwoBodyStepsheader{
+    font-family: myFontRegular;
+}
+.createTournamentStepTwoBodyStepsheader p{
+    margin: 0;
+    color: #585490;
+    font-size: 11px;
+}
+.createTournamentStepTwoBodyStep{
+    font-family: myFontMedium;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.createTournamentStepTwoBodyStepCheckActive{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, #B447EB, #5F35DD);
+}
+.createTournamentStepTwoBodyStepCheckActive i{
+    color: #fff;
+    font-size: 7px;
+}
+.createTournamentStepTwoBodyStepTextActive{
+    font-size: 12px;
+    color: #fff;
+}
+.createTournamentStepTwoBodyStepText{
+    font-size: 12px;
+    color: #D8D8FF;
+}
+.createTournamentStepTwoBodyStepCheck{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, #534F87, #25215A);
+}
+.createTournamentStepTwoBodyStepCheck i{
+    color: #D8D8FF;
+    font-size: 7px;
+}
+.createTournamentStepTwoBodyStepCheckCompleted{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #2FBA67;
+}
+.createTournamentStepTwoBodyStepCheckCompleted i{
+    color: #fff;
+    font-size: 7px;
+}
+.createTournamentStepTwoBodyStepsheader{
+    padding-top: 25px;
+}
+.createTournamentStepTwoBodyStepsheader,.createTournamentStepTwoBodyStep{
+    margin-bottom: 25px;
+}
+.TournamentDetailsDivs{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+.TournamentDetailsDiv label{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #D8D8FF;
+    font-family: myFontMedium;
+    font-size: 12px;
+}
+.TournamentDetailsDiv select{
+    width: 240px;
+    height: 45px;
+    background: #110D3D;
+    border: 1px solid #110D3D;
+    outline: #110D3D;
+    color: #fff;
+    font-family: myFontRegular;
+    font-size: 11px;
+    margin-top: 5px;
+    padding-left: 3%;
+    border-radius: 5px;
+}
+.checkBoxContainer{
+    display: flex;
+    align-items: center;
+}
+.checkButton{
+    background-image: linear-gradient(to right, #534F87, #25215A);
+    width: 50px;
+    height: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    position: relative;
+    transition: .2s;
+}
+.checkButton::before{
+    background: #AAAAE2;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin: 3px;
+    content: '';
+    transition: .2s;
+}
+#Check:checked + .checkButton{
+    background-image: linear-gradient(to right, #B447EB, #5F35DD);
+}
+#Check:checked + .checkButton::before{
+    background: #fff;
+    transform: translateX(30px);
+}
+#Check2:checked + .checkButton{
+    background-image: linear-gradient(to right, #B447EB, #5F35DD);
+}
+#Check2:checked + .checkButton::before{
+    background: #fff;
+    transform: translateX(30px);
+}
+.checkBoxContainer input{
+    display: none;
+}
+.checks{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.checking{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.checking label{
+    display: flex;
+    align-items: center;
+    color: #AAAAE2;
+    font-family: myFontMedium;
+    font-size: 12px;
+    gap: 4px;
+}
+.back{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+.back p{
+    margin: 0;
+    font-size: 13px;
+    color: #D8D8FF;
+    font-family: myFontMedium;
+}
+.backI{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, #534F87, #25215A);
+    cursor: pointer;
+}
+.backI i{
+    font-size: 13px;
+    color: #fff;
+}
+/*CREATE NEW TOURNAMENT STEP 3*/
+.createTournamentStepThree{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+    background-color: #070515;
+    padding: 0;
+    padding-left: 5%;
+    margin: 0;
+    display: none;
+}
+.createTournamentStepThreeHeader{
+    font-size: 15px;
+    color: #fff;
+    font-family: myFontMedium;
+    margin: 0;
+    margin-top: 15px;
+    letter-spacing: 1.2px;
+}
+.createTournamentStepThreeBody{
+    width: 90%;
+    background-color: #070523;
+    height: 70vh;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.createTournamentStepThreeBody{
+    display: flex;
+    align-items: first baseline;
+}
+.createTournamentStepThreeBodySteps{
+    margin-left: 3%;
+    width: 30%;
+}
+.createTournamentStepThreeBodyStepsheader{
+    font-family: myFontRegular;
+}
+.createTournamentStepThreeBodyStepsheader p{
+    margin: 0;
+    color: #585490;
+    font-size: 11px;
+}
+.createTournamentStepThreeBodyStep{
+    font-family: myFontMedium;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.createTournamentStepThreeBodyStepCheckActive{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, #B447EB, #5F35DD);
+}
+.createTournamentStepThreeBodyStepCheckActive i{
+    color: #fff;
+    font-size: 7px;
+}
+.createTournamentStepThreeBodyStepTextActive{
+    font-size: 12px;
+    color: #fff;
+}
+.createTournamentStepThreeBodyStepText{
+    font-size: 12px;
+    color: #D8D8FF;
+}
+.createTournamentStepThreeBodyStepCheck{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, #534F87, #25215A);
+}
+.createTournamentStepThreeBodyStepCheck i{
+    color: #D8D8FF;
+    font-size: 7px;
+}
+.createTournamentStepThreeBodyStepCheckCompleted{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #2FBA67;
+}
+.createTournamentStepThreeBodyStepCheckCompleted i{
+    color: #fff;
+    font-size: 7px;
+}
+.createTournamentStepThreeBodyStepsheader{
+    padding-top: 25px;
+}
+.createTournamentStepThreeBodyStepsheader,.createTournamentStepThreeBodyStep{
+    margin-bottom: 25px;
+}
+.setDateDetails{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Dates{
+    display: block;
+}
+.Dates label{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #D8D8FF;
+    font-family: myFontMedium;
+    font-size: 12px;
+}
+.Dates input{
+    width: 230px;
+    height: 30px;
+    margin-top: 3px;
+    font-family: myFontRegular;
+    border-radius: 5px;
+    color: #fff;
+    background: #110D3D;
+    border: 1px solid #100E30;
+    outline: #100E30;
+    padding: 3%;
+    font-size: 11px;
+}
+input[type="datetime-local"]::-webkit-inner-spin-button,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    color-scheme: dark;
+}
+.settingPrice{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.setPriceHeader p{
+    margin: 0;
+    color: #D8D8FF;
+    font-family: myFontMedium;
+    font-size: 12px;
+    margin: 15px 0;
+}
+.setPrice label{
+    display: block;
+    color: #D8D8FF;
+    font-family: myFontMedium;
+    font-size: 12px;
+}
+.setPrice input{
+    width: 230px;
+    height: 30px;
+    margin-top: 3px;
+    font-family: myFontRegular;
+    border-radius: 5px;
+    color: #fff;
+    background: #110D3D;
+    border: 1px solid #100E30;
+    outline: #100E30;
+    padding: 3%;
+    font-size: 11px;
+    caret-color: #fff;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.back{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+.back p{
+    margin: 0;
+    font-size: 13px;
+    color: #D8D8FF;
+    font-family: myFontMedium;
+}
+.backII{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, #534F87, #25215A);
+    cursor: pointer;
+}
+.backII i{
+    font-size: 13px;
+    color: #fff;
+}
+/*CREATE ACCOUNT JAVASCRIPT*/
+.createTournamentStepOne.createTournamentStepOneActive{
+    display: block;
+}
+.createTournamentStepTwo.createTournamentStepTwoActive{
+    display: block;
+}
+.createTournamentStepThree.createTournamentStepThreeActive{
+    display: block;
+}

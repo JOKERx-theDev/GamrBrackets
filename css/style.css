@@ -1,0 +1,532 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    caret-color: transparent;
+    background: #070515;
+}
+.gamrBody{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: start;
+}
+/*ADD FONT EXTERNALLY*/
+@font-face {
+    font-family: myFontMedium;
+    src: url(/Satoshi_Complete/Fonts/OTF/Satoshi-Medium.otf);
+}
+@font-face {
+    font-family: myFontBold;
+    src: url(/Satoshi_Complete/Fonts/OTF/Satoshi-Bold.otf);
+}
+@font-face {
+    font-family: myFontRegular;
+    src: url(/Satoshi_Complete/Fonts/OTF/Satoshi-Regular.otf);
+}
+/*LOGO*/
+.logobar{
+    border: 1px solid #272456;
+    border-left: none;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+    border-right: none;
+}
+.logo{
+    width: 63px;
+    height: 18px;
+    object-fit: contain;
+}
+.logo img{
+    width: 100%;
+    height: 100%;
+}
+/*SIDE BAR*/
+.side-bar{
+    height: 100vh;
+    width: 20%;
+    background: #05041B;
+    border-right: 1px solid #272456;
+}
+.sideBar-nav-menu ul,.side-bar-settings ul,.side-bar-sign-out ul{
+    margin: 0;
+    padding: 0;
+    padding-left: 10%;
+    padding-top: 15px;
+}
+.sideBar-nav-menu ul{
+    margin: 0;
+    padding: 0;
+    padding-left: 10%;
+    padding-top: 15px;
+    border-bottom: 1px solid #272456;
+    padding-bottom: 20px;
+}
+.side-bar-settings ul{
+    padding-bottom: 60px;
+}
+.sideBar-nav-menu ul li,.side-bar-settings ul li,.side-bar-sign-out ul li{
+    list-style: none;
+}
+.sideBar-nav-menu ul li a,.side-bar-settings ul li a,.side-bar-sign-out ul li a{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+    gap: 25px;
+    height: 40px;
+    color: #AAAAE2;
+}
+.sideBar-nav-menu ul li a :hover,.side-bar-settings ul li a :hover,.side-bar-sign-out ul li a :hover{
+    color: #fff;
+}
+.sideBar-nav-menu ul li a p,.side-bar-settings ul li a p,.side-bar-sign-out ul li a p{
+    margin: 0;
+    padding: 0;
+    font-family: myFontMedium;
+    font-size: 14px;
+    color: #AAAAE2;
+}
+.sideBar-nav-menu ul li a span,.side-bar-settings ul li a span,.side-bar-sign-out ul li a span{
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+.sideBar-nav-menu ul li a span img,.side-bar-settings ul li a span img,.side-bar-sign-out ul li a span img{
+    width: 100%;
+    height: 100%;
+}
+/*MAIN NAVIGAION MENU*/
+.gamrMainNavMenu ul ,.gamrMainNavList,.mainNavUserDetailsImg,.notification,.mainNavUserDetails{
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+.gamrMainNavMenu{
+    overflow: hidden;
+    width: 168vh;
+    background-color: #05041B;
+    border-bottom: 1px solid #272456;
+}
+.gamrMainNavMenu ul{
+    height: 50.5px;
+    width: 90%;
+    justify-content: space-between;
+    padding-left: 5%;
+}
+.gamrMainNavList{
+    gap: 50px;
+}
+.title{
+    font-family: myFontBold;
+    font-size: 13px;
+}
+.SignInAs{
+    font-family: myFontRegular;
+    font-size: 11px;
+}
+.signInAsUsername{
+    color: #585490;
+}
+.username{
+    color: #A9A7CE;
+}
+.title,.SignInAs{
+    color: #fff;
+}
+.notification{
+    position: relative;
+    height: 30px;
+    width: fit-content;
+    cursor: pointer;
+    font-family: myFontRegular;
+}
+.notifcationImg{
+    width: 17px;
+    height: 17px;
+    object-fit: cover;
+}
+.notifcationImg img{
+    width: 100%;
+    height: 100%;
+}
+.notificationAlert{
+    position: absolute;
+    height: 13px;
+    width: 13px;
+    background: #DA164E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 8px;
+    color: #fff;
+    top: 0%;
+    left: 50%;
+}
+.mainNavUserDetails{
+    gap: 5px;
+    cursor: pointer;
+}
+.mainNavUserDetailsImg{
+    height: 30px;
+    width: 30px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: #272456;
+    justify-content: center;
+}
+.mainNavUserDetailsImg img{
+    width: 50%;
+    height: 50%;
+}
+.mainNavUserDetailsArrow i{
+    font-size: 12px;
+    color: #A7A5CA;
+    transition: .5s;
+}
+.mainNavUserDetailsactive .mainNavUserDetailsArrow i{
+    transform: rotate(90deg);
+    transition: .5s;
+}
+.profileDetails{
+    position: absolute;
+    top: -100%;
+    left: 75%;
+    display: flex;
+    width: 300px;
+    align-items: center;
+    justify-content: space-around;
+    background: #100E30;
+    height: 60px;
+    border-radius: 10px;
+    transition: .5s;
+    z-index: -1;
+}
+.mainNavUserDetailsactive .profileDetails{
+    top: 10%;
+    transition: .5s;
+}
+.profileDetailsName p,.profileDetailsRank p{
+    margin: 0;
+}
+.profileDetailsImg{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    object-fit: contain;
+    justify-content: center;
+    align-items: center;
+    background: #272456;
+    border-radius: 50%;
+}
+.profileDetailsImg img{
+    width: 50%;
+    height: 50%;
+}
+.profileDetailsUserName{
+    font-family: myFontBold;
+    font-size: 13px;
+    color: #D8D8FF;
+    padding-top: 3px;
+}
+.profileDetailsTeamName{
+    font-family: myFontRegular;
+    font-size: 12px;
+    color: #56568A;
+}
+.leaderboad{
+    font-family: myFontRegular;
+    font-size: 13px;
+    color: #56568A;
+}
+.rating{
+    font-family: myFontRegular;
+    font-size: 12px;
+    color: #FFCB13;
+    padding-top: 3px;
+}
+/*GAMR HERO*/
+.gamrHero{
+    width: 90%;
+    padding: 5%;
+    padding-top: 2%;
+    padding-bottom: 0%;
+}
+.plans{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.planBox:nth-child(2){
+    background-image: linear-gradient(to bottom right, #B447EB, #381A92);
+}
+/*PLAN BOX*/
+.planBox{
+    width: 250px;
+    height: 140px;
+    padding: 1.5%;
+    background-image: linear-gradient(to bottom right, #03BBFF, #170588);
+    border-radius: 7px;
+    z-index: -2;
+}
+.planBox p,.planBox h2{
+    margin: 0;
+}
+.planboxWriting{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.planBoxTournamentDetails{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.planboxWritingHeader{
+    font-family: myFontBold;
+    font-size: 14px;
+    color: #fff;
+}
+.planboxArrow{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #ffffff2f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.planboxArrow i{
+    font-size: 13px;
+    color: #fff;
+    cursor: pointer;
+}
+.planBoxTournamentNumber{
+    font-family: myFontBold;
+    font-size: 50px;
+    color: #fff;
+}
+.planBoxTournamentDetailsStartedNumber{
+    font-family: myFontBold;
+    font-size: 12px;
+    color: #fff;
+}
+.planBoxTournamentDetailsStartedName{
+    font-family: myFontRegular;
+    font-size: 12px;
+    color: #A6BFF7;
+}
+.planBoxTournamentDetailsDisabledNumber{
+    font-family: myFontBold;
+    font-size: 12px;
+    color: #fff;
+}
+.planBoxTournamentDetailsDisabledName{
+    font-family: myFontRegular;
+    font-size: 12px;
+    color: #A6BFF7;
+}
+/*SUBBOX*/
+.subBox{
+    width: 230px;
+    height: 140px;
+    padding: 1.5%;
+    background-image: linear-gradient(to bottom right, #534F87, #25215A);
+    border-radius: 7px;
+    z-index: -2;
+}
+.subWriting,.subDetails{
+    display: flex;
+    align-items: start;
+}
+.subWritingHeader p,.subWritingHeader h3{
+    margin: 0;
+}
+.subPlans p,.subPlans h3, .subWritingPrice h3{
+    margin: 0;
+}
+.subWriting{
+    justify-content: space-between;
+    border-bottom: 1px solid #534D96;
+}
+.subWritingHeader h3{
+    font-family: myFontBold;
+    font-size: 14px;
+    color: #fff;
+}
+.subWritingHeaderActive{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.subWritingHeaderName{
+    font-family: myFontRegular;
+    font-size: 13px;
+}
+.subActive{
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #39DB7A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.subActive i{
+    font-size: 7px;
+    color: #fff;
+}
+.subWritingPrice h3{
+    font-family: myFontBold;
+    font-size: 35px;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+.subDetails{
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.subImg{
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+}
+.subImg img{
+    width: 100%;
+    height: 100%;
+}
+.subPlans h3{
+    font-size: 15px;
+    font-family: myFontBold;
+    color: #fff;
+}
+.subPlans p{
+    font-size: 13px;
+    font-family: myFontMedium;
+    color: #fff;
+}
+.upgradePlan{
+    color: #C5C1F1;
+    font-family: myFontRegular;
+    font-size: 12px;
+    margin-top: 15px;
+    color: #fff;
+}
+.subColor{
+    color: #03BBFF;
+}
+/*DATA & NEWS FROM ADMIN*/
+.dataAndNewsFromAdmin{
+    display: flex;
+    align-items: first baseline;
+    justify-content: space-between;
+    width: 97%;
+    margin-top: 30px;
+}
+.dataHeader p{
+    font-family: myFontMedium;
+    color: #fff;
+    font-size: 12px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.dataChange{
+    font-family: myFontRegular;
+    background-image: linear-gradient(to right, #B447EB, #5F35DD);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+    cursor: pointer;
+}
+.dataArrow i{
+    transform: rotate(35deg);
+    font-size: 11px;
+}
+.dataImgBody{
+    width: 130%;
+    background: #0D0B29;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.dataImg{
+    width: 420px;
+    height: 220px;
+    object-fit: cover;
+}
+.dataImg img{
+    width: 100%;
+    height: 100%;
+}
+/*ADMIN MESSAGE*/
+.adminMessageBody{
+    width: 36%;
+    height: 315px;
+}
+.adminMessageHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.adminMessageHeader p{
+    margin: 0;
+    font-family: myFontMedium;
+    color: #fff;
+    font-size: 12px;
+}
+/*MESSAGE*/
+.adminBodyNews{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+    padding: 3% 0%;
+    background: #0D0B29;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.adminBodyNewsImg{
+    width: 80px;
+    height: 50px;
+    object-fit: cover;
+    padding-left: 3%;
+}
+.adminBodyNewsImg img{
+    width: 100%;
+    height: 100%;
+}
+.adminBodyNewsText{
+    padding-right: 3%;
+}
+.adminBodyNewsText p{
+    margin: 0;
+    color: #fff;
+    font-family: myFontBold;
+    font-size: 11px;
+}
+.adminBodyNewsText h5{
+    margin: 0;
+    color: #AAAAE2;
+    font-family: myFontMedium;
+    font-size: 10px;
+}
+.adminBodyNewsTextDetails{
+    margin-top: 5px;
+}
